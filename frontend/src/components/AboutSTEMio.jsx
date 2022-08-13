@@ -5,7 +5,7 @@ import {
   WelcomePageImage,
 } from "./Welcome.styles";
 
-const mainText =
+export const mainText =
   "STEMio is a guideline that aims to promote the technical world to diverse candidates. The technology " +
   "industry has been experiencing lack of diversity talents over the past couple of years . The main " +
   "challenge the companies are  facing is finding and motivating diverse talent. One of the key findings I " +

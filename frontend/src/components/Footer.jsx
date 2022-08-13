@@ -5,8 +5,11 @@ export const Footer = () => {
     <div
       style={{
         height: "80px",
+        minHeight: "80px",
         backgroundColor: "#4281f5",
         color: "black",
+        alignSelf: "flex-end",
+        width: "100%",
       }}
     >
       @Hristiana Davidova , STEMio 2022

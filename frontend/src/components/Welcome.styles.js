@@ -7,6 +7,7 @@ export const RootContainer = styled.div(
     box-sizing: border-box;
     display: flex;
     padding: 50px;
+    flex-direction: column;
   `
 );
 

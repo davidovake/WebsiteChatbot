@@ -25,6 +25,7 @@ export const Welcome = () => {
         flexDirection: "column",
         gap: "10px",
         justifyContent: "center",
+        flex: "1",
       }}
     >
       <h1>

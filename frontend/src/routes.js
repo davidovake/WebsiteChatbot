@@ -1,7 +1,7 @@
 import { AboutSTEMio } from "./components/AboutSTEMio";
 import { FirstComponent } from "./components/FirstComponent";
 import { SecondComponent } from "./components/SecondComponent";
-import { TheGuideline } from "./components/TheGuideline";
+import { TheGuideline } from "./components/TheGuideline/TheGuideline";
 import { Videos } from "./components/Videos";
 import { FAQ } from "./components/FAQ";
 import { Contacts } from "./components/Contacts";
@@ -22,7 +22,15 @@ export const routes = [
   },
   {
     component: TheGuideline,
+    path: "/TheGuideline/:option",
+  },
+  {
+    component: TheGuideline,
     path: "/TheGuideline",
+  },
+  {
+    component: Videos,
+    path: "/VideosAndSocialMedia/:option",
   },
   {
     component: Videos,
