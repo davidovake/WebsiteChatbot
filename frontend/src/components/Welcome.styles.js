@@ -4,6 +4,7 @@ import Girls from "../images/girls.jpg";
 export const RootContainer = styled.div(
   ({ theme }) => css`
     flex: 1;
+    overflow: hidden;
     box-sizing: border-box;
     display: flex;
     padding: 50px;
@@ -16,8 +17,9 @@ export const RootFlexbox = styled.div(
     display: flex;
     flex: 1;
     flex-direction: row;
+    align-items: space-between;
     gap: 50px;
-    justify-content: space-between;
+    justify-content: center;
   `
 );
 
@@ -26,12 +28,13 @@ export const FlexboxItemStyles = css`
 `;
 
 export const WelcomePageImage = styled.div(
-  ({ theme }) => css`
+  ({ theme, imageUrl = Girls }) => css`
     flex: 1 1 0px;
-    background-image: url(${Girls});
+    background-image: url(${imageUrl});
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: 100% 100%;
+    /* aspect-ratio: 1 / 1; */
     cursor: pointer;
   `
 );

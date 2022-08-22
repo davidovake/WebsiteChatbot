@@ -15,13 +15,26 @@ async function trainChatBotIA() {
     manager.addDocument("en", "hi", "greetings.hello");
     manager.addDocument("en", "howdy", "greetings.hello");
     manager.addDocument("en", "What is my name?", "greetings.myname");
+    manager.addDocument("en", "1", "greetings.options");
+    manager.addDocument("en", "2", "greetings.options");
+    manager.addDocument("en", "3", "greetings.options");
 
     // Train also the NLG
     manager.addAnswer("en", "greetings.bye", "Till next time");
     manager.addAnswer("en", "greetings.bye", "see you soon!");
-    manager.addAnswer("en", "greetings.hello", "Hey there!");
-    manager.addAnswer("en", "greetings.hello", "Greetings!");
+    manager.addAnswer(
+      "en",
+      "greetings.hello",
+      "What do you want to learn today? Pick from the following options: \n1.Frontend\n2.Backend\n3.Full stack"
+    );
+    // manager.addAnswer("en", "greetings.hello", "Hey there!");
+    // manager.addAnswer("en", "greetings.hello", "Greetings!");
     manager.addAnswer("en", "greetings.myname", "Your name is Hristiana!");
+    manager.addAnswer(
+      "en",
+      "greetings.options",
+      "You are being sent to the requested page"
+    );
     await manager.train();
     manager.save();
     console.log("AI has been trainded");

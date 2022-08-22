@@ -1,8 +1,6 @@
 import { AboutSTEMio } from "./components/AboutSTEMio";
-import { FirstComponent } from "./components/FirstComponent";
-import { SecondComponent } from "./components/SecondComponent";
 import { TheGuideline } from "./components/TheGuideline/TheGuideline";
-import { Videos } from "./components/Videos";
+import { Blogs } from "./components/Blogs";
 import { FAQ } from "./components/FAQ";
 import { Contacts } from "./components/Contacts";
 import { Welcome } from "./components/Welcome";
@@ -10,7 +8,7 @@ import { Welcome } from "./components/Welcome";
 export const routes = [
   {
     component: Contacts,
-    path: "/Contacts",
+    path: "/contacts",
   },
   {
     component: FAQ,
@@ -18,23 +16,23 @@ export const routes = [
   },
   {
     component: AboutSTEMio,
-    path: "/AboutSTEMio",
+    path: "/about",
   },
   {
     component: TheGuideline,
-    path: "/TheGuideline/:option",
+    path: "/guideline/:option",
   },
   {
     component: TheGuideline,
-    path: "/TheGuideline",
+    path: "/guideline",
   },
   {
-    component: Videos,
-    path: "/VideosAndSocialMedia/:option",
+    component: Blogs,
+    path: "/blogs/:option",
   },
   {
-    component: Videos,
-    path: "/VideosAndSocialMedia",
+    component: Blogs,
+    path: "/blogs",
   },
   {
     component: Welcome,

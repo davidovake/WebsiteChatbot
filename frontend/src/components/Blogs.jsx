@@ -6,7 +6,7 @@ import { FrontendRoot } from "./TheGuideline/Frontend.styles";
 import { TheGuidelineButton } from "./TheGuideline/TheGuideline.styles";
 import { BlogButton } from "./Videos.styles";
 
-export const Videos = () => {
+export const Blogs = () => {
   const { option } = useParams();
   const history = useHistory();
 
@@ -23,18 +23,14 @@ export const Videos = () => {
           <ImposterSyndrome />
         )
       ) : !!option ? (
-        <Redirect to="/VideosAndSocialMedia" />
+        <Redirect to="/blogs" />
       ) : (
         <FrontendRoot>
-          <BlogButton
-            onClick={onRedirectClick("/VideosAndSocialMedia/stand-out-cv")}
-          >
+          <BlogButton onClick={onRedirectClick("/blogs/stand-out-cv")}>
             How to have a stand out CV for technical roles{" "}
           </BlogButton>
           <br />
-          <BlogButton
-            onClick={onRedirectClick("/VideosAndSocialMedia/imposter-syndrome")}
-          >
+          <BlogButton onClick={onRedirectClick("/blogs/imposter-syndrome")}>
             How to overcome the imposter syndrome and help bridge the diversity
             gap in the technology
           </BlogButton>

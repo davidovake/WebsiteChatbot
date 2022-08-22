@@ -4,6 +4,7 @@ import {
   WelcomePageText,
   WelcomePageImage,
 } from "./Welcome.styles";
+import aboutSTEMioPicture from "../images/aboutSTEMioPicture.png";
 
 export const mainText =
   "STEMio is a guideline that aims to promote the technical world to diverse candidates. The technology " +
@@ -41,8 +42,8 @@ export const AboutSTEMio = () => {
             flex: "1 1 0px",
           }}
         >
-          <WelcomePageImage />
-          <WelcomePageImage />
+          <WelcomePageImage imageUrl={aboutSTEMioPicture} />
+          {/* <WelcomePageImage /> */}
         </div>
       </RootFlexbox>
     </div>

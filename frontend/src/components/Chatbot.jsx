@@ -3,11 +3,16 @@ import { useEffect } from "react";
 import { useCallback } from "react";
 import { useState } from "react";
 import { Launcher } from "react-chat-window";
+import { useHistory } from "react-router-dom";
 import io from "socket.io-client";
+import { Root } from "./Chatbot.styles";
 
 const socket = io("http://localhost:3000");
 
 export const Chatbot = () => {
+  const history = useHistory();
+
+  const onRedirectClick = (newPath) => () => history.push(newPath);
   const [messageList, setMessageList] = useState([
     {
       author: "them",
@@ -18,16 +23,20 @@ export const Chatbot = () => {
 
   const onMessageWasSent = useCallback(
     async (message) => {
-      console.log("Message frontend", message);
-
-      console.log("Message list", messageList);
-
       await setMessageList((messageList) => [...messageList, message]);
 
       socket.emit("new-msg", {
         msg: message.data.text,
         room: "user1",
       });
+
+      message.data.text === "1"
+        ? history.push("/guideline/Frontend")
+        : message.data.text === "2"
+        ? history.push("/guideline/Backend")
+        : message.data.text === "3"
+        ? history.push("/guideline/FullStack")
+        : console.log();
     },
     [messageList]
   );
@@ -60,7 +69,7 @@ export const Chatbot = () => {
   }, []);
 
   return (
-    <div id="chatbox" className="chatbox">
+    <Root id="chatbox" className="chatbox">
       <Launcher
         agentProfile={{
           teamName: "Guideline chatbot",
@@ -74,6 +83,6 @@ export const Chatbot = () => {
         showEmoji
         newMessagesCount
       />
-    </div>
+    </Root>
   );
 };

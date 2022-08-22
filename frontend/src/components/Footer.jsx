@@ -10,6 +10,8 @@ export const Footer = () => {
         color: "black",
         alignSelf: "flex-end",
         width: "100%",
+        // position: "sticky",
+        // bottom: 0,
       }}
     >
       @Hristiana Davidova , STEMio 2022

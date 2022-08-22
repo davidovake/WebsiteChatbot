@@ -19,6 +19,7 @@ function App() {
       <div
         style={{
           height: "100vh",
+          margin: 0,
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",

@@ -6,6 +6,10 @@ import { Frontend } from "./Frontend";
 import { FullStack } from "./FullStack";
 import { Quiz } from "./Quiz";
 import { TheGuidelineButton, TheGuidelineRoot } from "./TheGuideline.styles";
+import FullStackImageButton from "../../images/FullStackImageButton.png";
+import BackendImageButton from "../../images/BackendImageButton.png";
+import FrontendImageButton from "../../images/FrontendImageButton.png";
+import QuizImageButton from "../../images/QuizImageButton.png";
 
 export const TheGuideline = () => {
   // @ts-ignore
@@ -29,38 +33,36 @@ export const TheGuideline = () => {
           <FullStack />
         )
       ) : !!option ? (
-        <Redirect to="/TheGuideline" />
+        <Redirect to="/guideline" />
       ) : (
         <>
           <TheGuidelineRoot>
             <TheGuidelineButton
-              onClick={onRedirectClick("/TheGuideline/Frontend")}
-            >
-              Frontend
-            </TheGuidelineButton>
+              imageUrl={FrontendImageButton}
+              onClick={onRedirectClick("/guideline/Frontend")}
+            />
             <TheGuidelineButton
-              onClick={onRedirectClick("/TheGuideline/Backend")}
-            >
-              Backend
-            </TheGuidelineButton>
+              imageUrl={BackendImageButton}
+              onClick={onRedirectClick("/guideline/Backend")}
+            />
             <TheGuidelineButton
-              onClick={onRedirectClick("/TheGuideline/FullStack")}
-            >
-              Full stack
-            </TheGuidelineButton>
+              imageUrl={FullStackImageButton}
+              onClick={onRedirectClick("/guideline/FullStack")}
+            />
           </TheGuidelineRoot>
           <br />
           <TheGuidelineRoot>
-            <TheGuidelineButton onClick={onRedirectClick("/TheGuideline/Quiz")}>
-              Quiz
-            </TheGuidelineButton>
             <TheGuidelineButton
-              onClick={onRedirectClick("/TheGuideline/undefinedButton1")}
+              imageUrl={QuizImageButton}
+              onClick={onRedirectClick("/guideline/Quiz")}
+            />
+            <TheGuidelineButton
+              onClick={onRedirectClick("/guideline/undefinedButton1")}
             >
               undefinedButton1
             </TheGuidelineButton>
             <TheGuidelineButton
-              onClick={onRedirectClick("/TheGuideline/undefinedButton2")}
+              onClick={onRedirectClick("/guideline/undefinedButton2")}
             >
               undefinedButton2
             </TheGuidelineButton>

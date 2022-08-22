@@ -9,7 +9,7 @@ export const TheGuidelineRoot = styled.div(
 );
 
 export const TheGuidelineButton = styled.button(
-  ({ theme }) => css`
+  ({ theme, imageUrl = null }) => css`
     flex: 1 1 0px;
     cursor: pointer;
     box-sizing: border-box;
@@ -18,6 +18,15 @@ export const TheGuidelineButton = styled.button(
     height: 25vh;
     border: none;
     transition: all 0.3s ease-out;
+
+    ${!!imageUrl &&
+    css`
+      background-image: url(${imageUrl});
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      cursor: pointer;
+    `}
 
     &:hover {
       box-shadow: -10px 10px;
