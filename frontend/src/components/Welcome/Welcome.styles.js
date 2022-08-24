@@ -38,12 +38,12 @@ export const FlexboxItemStyles = css`
 `;
 
 export const WelcomePageImage = styled.div(
-  ({ theme, imageUrl = Girls }) => css`
+  ({ theme, imageUrl = Girls, widthSize = 100 }) => css`
     flex: 1 1 0px;
     background-image: url(${imageUrl});
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100% 100%;
+    background-size: ${widthSize}% 100%;
     /* aspect-ratio: 1 / 1; */
     cursor: pointer;
   `

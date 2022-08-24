@@ -1,3 +1,5 @@
+import { Button } from "@mui/material";
+import { styled as muiStyled } from "@mui/material/styles";
 import styled, { css } from "styled-components";
 import Logo from "../../images/STEMio.png";
 
@@ -27,6 +29,25 @@ export const LogoComponent = styled.div(
     background-size: cover;
     background-position: center center;
     cursor: pointer;
+  `
+);
+
+export const StyledNavButton = muiStyled(Button)(
+  ({ theme }) => css`
+    flex: 1 1 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: pink;
+    color: black;
+    border: none;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: pink;
+
+      box-shadow: -5px 5px black;
+    }
   `
 );
 

@@ -27,6 +27,7 @@ async function trainChatBotIA() {
       "greetings.hello",
       "What do you want to learn today? Pick from the following options: \n1.Frontend\n2.Backend\n3.Full stack"
     );
+
     // manager.addAnswer("en", "greetings.hello", "Hey there!");
     // manager.addAnswer("en", "greetings.hello", "Greetings!");
     manager.addAnswer("en", "greetings.myname", "Your name is Hristiana!");

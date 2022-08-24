@@ -5,7 +5,7 @@ import {
   WelcomePageImage,
   WelcomePageText,
 } from "../Welcome/Welcome.styles";
-import { MainContainer, Root } from "./AboutSTEMio.styles";
+import { Root } from "./AboutSTEMio.styles";
 
 export const mainText =
   "STEMio is a guideline that aims to promote the technical world to diverse candidates. The technology " +
@@ -28,9 +28,9 @@ export const AboutSTEMio = () => {
     <Root>
       <RootFlexbox>
         <WelcomePageText>{mainText}</WelcomePageText>
-        <MainContainer>
-          <WelcomePageImage imageUrl={aboutSTEMioPicture} />
-        </MainContainer>
+        <WelcomePageImage widthSize={50} imageUrl={aboutSTEMioPicture} />
+        {/* <MainContainer> */}
+        {/* </MainContainer> */}
       </RootFlexbox>
     </Root>
   );
