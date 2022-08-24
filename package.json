@@ -6,7 +6,8 @@
     "start": "node app",
     "server": "nodemon ./bin/www",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "build": "npm run build --prefix frontend"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
