@@ -1,11 +1,9 @@
 import React from "react";
-import { FrontendRoot } from "./TheGuideline/Frontend.styles";
-
-const mainText = "";
+import { GuidelineSubPageRoot } from "../generic.styles";
 
 export const Contacts = () => {
   return (
-    <FrontendRoot>
+    <GuidelineSubPageRoot>
       <h2>About me</h2>
       <p>
         My professional background is in graduate STEM recruitment. I have years
@@ -43,6 +41,6 @@ export const Contacts = () => {
           www.linkedin.com/in/hristiana-davidova-8b926615b
         </a>{" "}
       </p>
-    </FrontendRoot>
+    </GuidelineSubPageRoot>
   );
 };

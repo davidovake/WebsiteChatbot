@@ -3,6 +3,7 @@ import {
   RootFlexbox,
   WelcomePageImage,
   WelcomePageText,
+  WelcomeRoot,
 } from "./Welcome.styles";
 
 // function Welcome() {
@@ -19,15 +20,7 @@ const MainText =
 
 export const Welcome = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        justifyContent: "center",
-        flex: "1",
-      }}
-    >
+    <WelcomeRoot>
       <h1>
         <b>Welcome to STEMio - The useful guideline</b>
       </h1>
@@ -35,6 +28,6 @@ export const Welcome = () => {
         <WelcomePageImage />
         <WelcomePageText>{MainText}</WelcomePageText>
       </RootFlexbox>
-    </div>
+    </WelcomeRoot>
   );
 };

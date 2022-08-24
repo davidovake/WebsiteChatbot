@@ -1,10 +1,11 @@
 import React from "react";
+import aboutSTEMioPicture from "../../images/aboutSTEMioPicture.png";
 import {
   RootFlexbox,
-  WelcomePageText,
   WelcomePageImage,
-} from "./Welcome.styles";
-import aboutSTEMioPicture from "../images/aboutSTEMioPicture.png";
+  WelcomePageText,
+} from "../Welcome/Welcome.styles";
+import { MainContainer, Root } from "./AboutSTEMio.styles";
 
 export const mainText =
   "STEMio is a guideline that aims to promote the technical world to diverse candidates. The technology " +
@@ -24,29 +25,13 @@ export const mainText =
 
 export const AboutSTEMio = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        justifyContent: "center",
-      }}
-    >
+    <Root>
       <RootFlexbox>
         <WelcomePageText>{mainText}</WelcomePageText>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            flex: "1 1 0px",
-          }}
-        >
+        <MainContainer>
           <WelcomePageImage imageUrl={aboutSTEMioPicture} />
-          {/* <WelcomePageImage /> */}
-        </div>
+        </MainContainer>
       </RootFlexbox>
-    </div>
+    </Root>
   );
-  // return <div>{mainText}</div>;
 };

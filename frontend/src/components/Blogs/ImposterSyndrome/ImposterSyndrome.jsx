@@ -1,9 +1,9 @@
 import React from "react";
-import { FrontendRoot } from "./TheGuideline/Frontend.styles";
+import { GuidelineSubPageRoot } from "../../generic.styles";
 
 export const ImposterSyndrome = () => {
   return (
-    <FrontendRoot>
+    <GuidelineSubPageRoot>
       <h2>
         How to overcome the imposter syndrome and help bridge the diversity gap
         in the technology
@@ -44,6 +44,6 @@ export const ImposterSyndrome = () => {
         are on the right track you can create a coding journal where you can
         record your progress and set goals to achieve.
       </p>
-    </FrontendRoot>
+    </GuidelineSubPageRoot>
   );
 };

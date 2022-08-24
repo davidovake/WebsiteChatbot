@@ -1,9 +1,6 @@
 import React from "react";
-// import { useHistory } from "react-router-dom/cjs/react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { LogoComponent, NavButton } from "../Header.styles";
-import { HeaderRoot } from "./Header.styles";
-// import Logo from "../images/STEMio.png";
+import { HeaderRoot, LogoComponent, NavButton } from "./Header.styles";
 
 export const Header = () => {
   const history = useHistory();

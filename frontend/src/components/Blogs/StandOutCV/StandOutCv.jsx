@@ -1,34 +1,15 @@
 import React from "react";
-import { FrontendRoot } from "./TheGuideline/Frontend.styles";
-import StandOutCVImage from "../images/StandOutCVImage.png";
+import StandOutCVImage from "../../../images/StandOutCVImage.png";
+import { GuidelineSubPageRoot } from "../../generic.styles";
+import { InnerRoot, Root } from "./StandOutCV.styles";
 
 export const StandOutCv = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        flexDirection: "row",
-        alignItems: "center",
-        // overflow: "hidden",
-      }}
-    >
-      <div
-        style={{
-          flex: "1 1 0px",
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
-        <img
-          // style={{ position: "absolute", left: 0 }}
-          height={400}
-          width={400}
-          src={StandOutCVImage}
-        />
-      </div>
-      <FrontendRoot>
+    <Root>
+      <InnerRoot>
+        <img height={400} width={400} src={StandOutCVImage} />
+      </InnerRoot>
+      <GuidelineSubPageRoot>
         <h2>How to have a stand out CV for technical roles</h2>
         <p>
           Building a good cv is the first important step you need to think of if
@@ -83,7 +64,7 @@ export const StandOutCv = () => {
           etc. Podcasts look good on your cv and can really motive you if you
           are pursing a career in technology.
         </p>
-      </FrontendRoot>
-    </div>
+      </GuidelineSubPageRoot>
+    </Root>
   );
 };

@@ -1,34 +1,15 @@
 import React from "react";
-import { FrontendRoot } from "./Frontend.styles";
-import FullStackImage from "../../images/FullStackImage.png";
+import FullStackImage from "../../../images/FullStackImage.png";
+import { GuidelineSubPageRoot } from "../../generic.styles";
+import { InnerRoot, RightGap, Root } from "../Frontend/Frontend.styles";
 
 export const FullStack = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        flexDirection: "row",
-        alignItems: "center",
-        // overflow: "hidden",
-      }}
-    >
-      <div
-        style={{
-          flex: "1 1 0px",
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
-        <img
-          // style={{ position: "absolute", left: 0 }}
-          height={300}
-          width={200}
-          src={FullStackImage}
-        />
-      </div>
-      <FrontendRoot>
+    <Root>
+      <InnerRoot>
+        <img height={300} width={200} src={FullStackImage} />
+      </InnerRoot>
+      <GuidelineSubPageRoot>
         <h1>What is a Full Stack Developer?</h1>
         <p>
           Full-stack technology refers to the entire depth of a computer system
@@ -205,8 +186,8 @@ export const FullStack = () => {
             )
           </li>
         </ul>
-      </FrontendRoot>
-      <div style={{ flex: "1 1 0px" }}></div>
-    </div>
+      </GuidelineSubPageRoot>
+      <RightGap />
+    </Root>
   );
 };

@@ -1,10 +1,9 @@
 import React from "react";
-import { useParams, useHistory, Redirect } from "react-router-dom";
-import { ImposterSyndrome } from "./ImposterSyndrome";
-import { StandOutCv } from "./StandOutCv";
-import { FrontendRoot } from "./TheGuideline/Frontend.styles";
-import { TheGuidelineButton } from "./TheGuideline/TheGuideline.styles";
-import { BlogButton } from "./Videos.styles";
+import { Redirect, useHistory, useParams } from "react-router-dom";
+import { GuidelineSubPageRoot } from "../generic.styles";
+import { BlogButton } from "./Blogs.styles";
+import { ImposterSyndrome } from "./ImposterSyndrome/ImposterSyndrome";
+import { StandOutCv } from "./StandOutCV/StandOutCv";
 
 export const Blogs = () => {
   const { option } = useParams();
@@ -25,7 +24,7 @@ export const Blogs = () => {
       ) : !!option ? (
         <Redirect to="/blogs" />
       ) : (
-        <FrontendRoot>
+        <GuidelineSubPageRoot>
           <BlogButton onClick={onRedirectClick("/blogs/stand-out-cv")}>
             How to have a stand out CV for technical roles{" "}
           </BlogButton>
@@ -34,7 +33,7 @@ export const Blogs = () => {
             How to overcome the imposter syndrome and help bridge the diversity
             gap in the technology
           </BlogButton>
-        </FrontendRoot>
+        </GuidelineSubPageRoot>
       )}
     </>
   );

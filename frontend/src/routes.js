@@ -1,9 +1,9 @@
-import { AboutSTEMio } from "./components/AboutSTEMio";
+import { AboutSTEMio } from "./components/AboutSTEMio/AboutSTEMio";
+import { Blogs } from "./components/Blogs/Blogs";
+import { Contacts } from "./components/Contacts/Contacts";
+import { FAQ } from "./components/FAQ/FAQ";
 import { TheGuideline } from "./components/TheGuideline/TheGuideline";
-import { Blogs } from "./components/Blogs";
-import { FAQ } from "./components/FAQ";
-import { Contacts } from "./components/Contacts";
-import { Welcome } from "./components/Welcome";
+import { Welcome } from "./components/Welcome/Welcome";
 
 export const routes = [
   {

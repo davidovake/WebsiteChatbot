@@ -1,5 +1,15 @@
 import styled, { css } from "styled-components";
-import Girls from "../images/girls.jpg";
+import Girls from "../../images/girls.jpg";
+
+export const WelcomeRoot = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    flex: 1;
+  `
+);
 
 export const RootContainer = styled.div(
   ({ theme }) => css`

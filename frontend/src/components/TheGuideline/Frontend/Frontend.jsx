@@ -1,23 +1,15 @@
 import React from "react";
-import { mainText } from "../AboutSTEMio";
-import { BackgroundImage, FrontendRoot, MainRoot } from "./Frontend.styles";
-import FrontendImage from "../../images/FrontendImage.png";
+import FrontendImage from "../../../images/FrontendImage.png";
+import { GuidelineSubPageRoot } from "../../generic.styles";
+import { InnerRoot, RightGap, Root } from "../Frontend/Frontend.styles";
 
 export const Frontend = () => {
   return (
-    <MainRoot>
-      <div
-        style={{
-          flex: "1 1 0px",
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
+    <Root>
+      <InnerRoot>
         <img height={300} width={200} src={FrontendImage} />
-      </div>
-      <FrontendRoot>
-        {/* <BackgroundImage /> */}
+      </InnerRoot>
+      <GuidelineSubPageRoot>
         <h1>What is Front End?</h1>
         <p>
           Front-end web development, also known as client-side development is
@@ -214,8 +206,8 @@ export const Frontend = () => {
           <a href="https://stackoverflow.com/">https://stackoverflow.com/</a>)
           Looking for an answer on StackFlow – you are already a developer.
         </p>
-      </FrontendRoot>
-      <div style={{ flex: "1 1 0px" }}></div>
-    </MainRoot>
+      </GuidelineSubPageRoot>
+      <RightGap />
+    </Root>
   );
 };

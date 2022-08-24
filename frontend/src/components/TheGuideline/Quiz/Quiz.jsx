@@ -1,9 +1,9 @@
 import React from "react";
-import { FrontendRoot } from "./Frontend.styles";
+import { GuidelineSubPageRoot } from "../../generic.styles";
 
 export const Quiz = () => {
   return (
-    <FrontendRoot>
+    <GuidelineSubPageRoot>
       <h2>Find out which technical career path suits you the most</h2>
       <p>
         There are many interesting technical career pathways that you can follow
@@ -25,6 +25,6 @@ export const Quiz = () => {
           https://skillcrush.com/blog/is-a-tech-career-right-for-you/
         </a>
       </p>
-    </FrontendRoot>
+    </GuidelineSubPageRoot>
   );
 };

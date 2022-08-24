@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export const BlogButton = styled.button(
   ({ theme }) => css`
-    /* flex: 1 1 0px; */
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 10px;

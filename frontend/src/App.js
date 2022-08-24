@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { routes } from "./routes";
+import { Chatbot } from "./components/Chatbot/Chatbot";
+import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer";
-import { RootContainer } from "./components/Welcome.styles";
-import { Chatbot } from "./components/Chatbot";
+import { RootContainer } from "./components/Welcome/Welcome.styles";
+import { routes } from "./routes";
 
 function App() {
   const redirectTo = () => {

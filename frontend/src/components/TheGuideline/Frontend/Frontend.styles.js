@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import FrontendImage from "../../images/FrontendImage.png";
+import FrontendImage from "../../../images/FrontendImage.png";
 
-export const MainRoot = styled.div(
+export const Root = styled.div(
   ({ theme }) => css`
     display: flex;
     flex: 1;
@@ -10,23 +10,18 @@ export const MainRoot = styled.div(
   `
 );
 
-export const FrontendRoot = styled.div(
+export const InnerRoot = styled.div(
   ({ theme }) => css`
+    flex: 1 1 0px;
     display: flex;
-    flex-direction: column;
-    overflow: auto;
-    /* overflow: scroll; */
-    /* gap: 10px; */
-    flex: 3 1 0px;
-    padding-left: 10px;
-    height: 75vh;
-    /* width: 50%; */
-    align-self: center;
-    text-align: left;
+    justify-content: center;
+    align-content: center;
+  `
+);
 
-    ::-webkit-scrollbar {
-      width: 0px;
-    }
+export const RightGap = styled.div(
+  ({ theme }) => css`
+    flex: 1 1 0px;
   `
 );
 

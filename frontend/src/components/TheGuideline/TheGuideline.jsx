@@ -1,10 +1,10 @@
 import React from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { Backend } from "./Backend";
-import { Frontend } from "./Frontend";
-import { FullStack } from "./FullStack";
-import { Quiz } from "./Quiz";
+import { Backend } from "./Backend/Backend";
+import { Frontend } from "./Frontend/Frontend";
+import { FullStack } from "./FullStack/FullStack";
+import { Quiz } from "./Quiz/Quiz";
 import { TheGuidelineButton, TheGuidelineRoot } from "./TheGuideline.styles";
 import FullStackImageButton from "../../images/FullStackImageButton.png";
 import BackendImageButton from "../../images/BackendImageButton.png";
