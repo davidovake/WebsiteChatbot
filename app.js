@@ -2,11 +2,13 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
+const nodemailer = require("nodemailer");
 var logger = require("morgan");
 var trainAI = require("./chatbotService");
 var cors = require("cors");
 
 var app = express();
+require("dotenv").config();
 app.use(cors());
 
 //train the AI
@@ -21,6 +23,47 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "./frontend/build")));
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    type: "OAuth2",
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
+    clientId: process.env.OAUTH_CLIENTID,
+    clientSecret: process.env.OAUTH_CLIENT_SECRET,
+    refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+  },
+});
+transporter.verify((err, success) => {
+  err
+    ? console.log(err)
+    : console.log(`=== Server is ready to take messages: ${success} ===`);
+});
+
+app.post("/api/newsletter", function (req, res) {
+  console.log("Body: ", req.body);
+
+  let mailOptions = {
+    from: process.env.EMAIL,
+    to: req.body.email,
+    subject: `Subscribing to StemIO newsletter`,
+    text: `Dear user\n, Thank you for subscribing to the newsletter.\nKind regards,\n StemIO team`,
+  };
+
+  transporter.sendMail(mailOptions, function (err, data) {
+    if (err) {
+      res.json({
+        status: "fail",
+      });
+    } else {
+      console.log("== Message Sent ==");
+      res.json({
+        status: "success",
+      });
+    }
+  });
+});
 
 app.get("*", (req, res) => {
   res.sendFile(`${__dirname}/frontend/build/index.html`);

@@ -18,8 +18,25 @@ async function trainChatBotIA() {
     manager.addDocument("en", "1", "greetings.options");
     manager.addDocument("en", "2", "greetings.options");
     manager.addDocument("en", "3", "greetings.options");
-
+    manager.addDocument(
+      "en",
+      "I want to subscribe to the newsletter",
+      "greetings.subscribe"
+    );
+    manager.addDocument("en", "My mail is %email%", "email");
+    manager.addDocument("en", "My email is %email%", "email");
+    manager.addDocument("en", "Here you have my email: %email%", "email");
+    manager.addAnswer(
+      "en",
+      "email",
+      "Your email is {{email}} and has been added to the newsletter"
+    );
     // Train also the NLG
+    manager.addAnswer(
+      "en",
+      "greetings.subscribe",
+      "Enter your email address please"
+    );
     manager.addAnswer("en", "greetings.bye", "Till next time");
     manager.addAnswer("en", "greetings.bye", "see you soon!");
     manager.addAnswer(

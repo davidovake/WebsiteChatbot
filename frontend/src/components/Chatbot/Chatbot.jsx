@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { Launcher } from "react-chat-window";
 import { useHistory } from "react-router-dom";
@@ -11,6 +12,14 @@ const URL =
 
 const socket = io(URL);
 
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
 export const Chatbot = () => {
   const history = useHistory();
 
@@ -23,22 +32,45 @@ export const Chatbot = () => {
     },
   ]);
 
+  const sendEmail = async (email) => {
+    console.log("Gets in the email sender: ", email);
+
+    await axios({
+      method: "POST",
+      url: `${URL}/api/newsletter`,
+      data: JSON.stringify({ email: email }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
   const onMessageWasSent = useCallback(
     async (message) => {
-      await setMessageList((messageList) => [...messageList, message]);
+      await setMessageList((messageList) => [
+        ...messageList,
+        message,
+        {
+          author: "them",
+          type: "text",
+          data: { text: "••••" },
+        },
+      ]);
 
       socket.emit("new-msg", {
         msg: message.data.text,
         room: "user1",
       });
 
-      message.data.text === "1"
+      validateEmail(message.data.text)
+        ? sendEmail(message.data.text)
+        : message.data.text === "1"
         ? history.push("/guideline/Frontend")
         : message.data.text === "2"
         ? history.push("/guideline/Backend")
         : message.data.text === "3"
         ? history.push("/guideline/FullStack")
-        : console.log();
+        : console.log("Non specific text: ", message.data.text);
     },
     [messageList]
   );
@@ -53,14 +85,18 @@ export const Chatbot = () => {
     socket.on("send-msg-response", async (msg) => {
       console.log("Test: ", msg);
 
-      setMessageList((messageList) => [
-        ...messageList,
-        {
-          author: "them",
-          type: "text",
-          data: { text: msg },
-        },
-      ]);
+      setMessageList((messageList) => {
+        messageList.pop();
+
+        return [
+          ...messageList,
+          {
+            author: "them",
+            type: "text",
+            data: { text: msg },
+          },
+        ];
+      });
     });
 
     return () => {
