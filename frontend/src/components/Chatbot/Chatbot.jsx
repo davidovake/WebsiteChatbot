@@ -4,7 +4,12 @@ import { useHistory } from "react-router-dom";
 import io from "socket.io-client";
 import { Root } from "./Chatbot.styles";
 
-const socket = io("http://localhost:3000");
+const URL =
+  !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://stemio-guidleine.herokuapp.com";
+
+const socket = io(URL);
 
 export const Chatbot = () => {
   const history = useHistory();

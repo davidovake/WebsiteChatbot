@@ -9,6 +9,9 @@ var cors = require("cors");
 var app = express();
 app.use(cors());
 
+//train the AI
+trainAI.trainChatBotIA();
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -27,9 +30,6 @@ app.get("*", (req, res) => {
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
-//train the AI
-trainAI.trainChatBotIA();
 
 //error handler
 app.use(function (err, req, res, next) {
