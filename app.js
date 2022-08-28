@@ -48,7 +48,7 @@ app.post("/api/newsletter", function (req, res) {
     from: process.env.EMAIL,
     to: req.body.email,
     subject: `Subscribing to StemIO newsletter`,
-    text: `Dear user\n, Thank you for subscribing to the newsletter.\nKind regards,\n StemIO team`,
+    text: `Dear user,\n\nThank you for subscribing to the newsletter.\n\nKind regards,\nStemIO team`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
