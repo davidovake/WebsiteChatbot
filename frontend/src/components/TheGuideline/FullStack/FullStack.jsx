@@ -7,7 +7,7 @@ export const FullStack = () => {
   return (
     <Root>
       <InnerRoot>
-        <img height={300} width={200} src={FullStackImage} />
+        <img alt="Full stack" height={300} width={200} src={FullStackImage} />
       </InnerRoot>
       <GuidelineSubPageRoot>
         <h1>What is a Full Stack Developer?</h1>

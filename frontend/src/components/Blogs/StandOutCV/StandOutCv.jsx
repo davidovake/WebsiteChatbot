@@ -7,7 +7,12 @@ export const StandOutCv = () => {
   return (
     <Root>
       <InnerRoot>
-        <img height={400} width={400} src={StandOutCVImage} />
+        <img
+          alt="Stand out CV"
+          height={400}
+          width={400}
+          src={StandOutCVImage}
+        />
       </InnerRoot>
       <GuidelineSubPageRoot>
         <h2>How to have a stand out CV for technical roles</h2>

@@ -23,7 +23,6 @@ const validateEmail = (email) => {
 export const Chatbot = () => {
   const history = useHistory();
 
-  const onRedirectClick = (newPath) => () => history.push(newPath);
   const [messageList, setMessageList] = useState([
     {
       author: "them",
@@ -72,7 +71,7 @@ export const Chatbot = () => {
         ? history.push("/guideline/FullStack")
         : console.log("Non specific text: ", message.data.text);
     },
-    [messageList]
+    [history]
   );
 
   useEffect(() => {

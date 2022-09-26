@@ -7,7 +7,7 @@ export const Frontend = () => {
   return (
     <Root>
       <InnerRoot>
-        <img height={300} width={200} src={FrontendImage} />
+        <img alt="Frontend" height={300} width={200} src={FrontendImage} />
       </InnerRoot>
       <GuidelineSubPageRoot>
         <h1>What is Front End?</h1>
