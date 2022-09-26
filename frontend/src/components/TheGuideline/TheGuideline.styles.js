@@ -33,3 +33,10 @@ export const TheGuidelineButton = styled.button(
     }
   `
 );
+
+export const StyledDownloadLink = styled.a(
+  ({ theme }) => css`
+    display: flex;
+    flex: 1;
+  `
+);

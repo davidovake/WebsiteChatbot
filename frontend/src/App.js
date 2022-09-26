@@ -27,9 +27,6 @@ function App() {
         <Header />
 
         <RootContainer>
-          {/* {[...Array(1000).keys()].map((item) => (
-            <div>test</div>
-          ))} */}
           <Switch>
             {routes.map(({ component, path }) => (
               <Route component={component} path={path} exact />

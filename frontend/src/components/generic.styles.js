@@ -4,10 +4,10 @@ export const GuidelineSubPageRoot = styled.div(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow: scroll;
     flex: 3 1 0px;
     padding-left: 10px;
-    height: 75vh;
+    height: calc(100vh - 220px);
     align-self: center;
     text-align: left;
 
