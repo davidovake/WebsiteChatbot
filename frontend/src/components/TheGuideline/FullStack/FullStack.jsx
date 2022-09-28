@@ -3,6 +3,10 @@ import FullStackImage from "../../../images/FullStackImage.png";
 import { GuidelineSubPageRoot } from "../../generic.styles";
 import { InnerRoot, RightGap, Root } from "../Frontend/Frontend.styles";
 
+/**
+ * Component visible upon clicking the fullstack button or entering the URL
+ * @returns the fullstack page from the guideline
+ */
 export const FullStack = () => {
   return (
     <Root>

@@ -11,7 +11,9 @@ var app = express();
 require("dotenv").config();
 app.use(cors());
 
-//train the AI
+/**
+ * Training the chatbot on server initialising
+ */
 trainAI.trainChatBotIA();
 
 // view engine setup
@@ -24,6 +26,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 
+/**
+ * Setup method for creating the email transporter
+ */
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -35,12 +40,19 @@ let transporter = nodemailer.createTransport({
     refreshToken: process.env.OAUTH_REFRESH_TOKEN,
   },
 });
+
+/**
+ * Method that checks if the transporter was created successfully
+ */
 transporter.verify((err, success) => {
   err
     ? console.log(err)
     : console.log(`=== Server is ready to take messages: ${success} ===`);
 });
 
+/**
+ * REST API POST method for handling the email sending requests
+ */
 app.post("/api/newsletter", function (req, res) {
   console.log("Body: ", req.body);
 
@@ -65,6 +77,9 @@ app.post("/api/newsletter", function (req, res) {
   });
 });
 
+/**
+ * Route forwarding to the frontend
+ */
 app.get("*", (req, res) => {
   res.sendFile(`${__dirname}/frontend/build/index.html`);
 });

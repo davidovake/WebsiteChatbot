@@ -6,7 +6,11 @@ import {
   RightGap,
   Root,
 } from "../TheGuideline/Frontend/Frontend.styles";
-// TODO
+
+/**
+ * Component visible upon clicking the FAQ button or entering the URL
+ * @returns the FAQ page of the app
+ */
 export const FAQ = () => {
   return (
     <Root>

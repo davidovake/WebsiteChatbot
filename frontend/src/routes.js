@@ -5,6 +5,9 @@ import { FAQ } from "./components/FAQ/FAQ";
 import { TheGuideline } from "./components/TheGuideline/TheGuideline";
 import { Welcome } from "./components/Welcome/Welcome";
 
+/**
+ * The main routes used by the react-router-library
+ */
 export const routes = [
   {
     component: Contacts,

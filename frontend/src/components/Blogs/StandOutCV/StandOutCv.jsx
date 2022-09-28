@@ -3,6 +3,10 @@ import StandOutCVImage from "../../../images/StandOutCVImage.png";
 import { GuidelineSubPageRoot } from "../../generic.styles";
 import { InnerRoot, Root } from "./StandOutCV.styles";
 
+/**
+ * Component visible upon clicking the StandOutCv button or entering the URL
+ * @returns the StandOutCv page from the blogs
+ */
 export const StandOutCv = () => {
   return (
     <Root>

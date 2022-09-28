@@ -17,11 +17,26 @@ import {
   TheGuidelineRoot,
 } from "./TheGuideline.styles";
 
+/**
+ * Component visible when clicking on the guideline button from the header
+ * @returns the guideline page
+ */
 export const TheGuideline = () => {
+  /**
+   * useParams is the hook that gets parameters found within the URL
+   */
   // @ts-ignore
   const { option } = useParams();
+
+  /**
+   * useHistory is the hook responsbile for navigation
+   */
   const history = useHistory();
 
+  /**
+   * Helper method that wraps the functionality for useHistory
+   * @param {string} newPath
+   */
   const onRedirectClick = (newPath) => () => history.push(newPath);
 
   const optionArray = [
@@ -34,6 +49,9 @@ export const TheGuideline = () => {
 
   return (
     <>
+      {/**
+       * This is the switcher for the subviews found within the guideline
+       */}
       {optionArray.includes(option) ? (
         option === "Backend" ? (
           <Backend />
@@ -66,6 +84,9 @@ export const TheGuideline = () => {
               onClick={onRedirectClick("/guideline/Quiz")}
             />
 
+            {/**
+             * This is the component responsible for triggering the coding journal template download
+             */}
             <StyledDownloadLink
               href={fileToDownload}
               target="_blank"

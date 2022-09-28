@@ -7,6 +7,10 @@ import { Header } from "./components/Header/Header";
 import { RootContainer } from "./components/Welcome/Welcome.styles";
 import { routes } from "./routes";
 
+/**
+ * This is the root of the application
+ * @returns the DOM tree of the app
+ */
 function App() {
   const redirectTo = () => {
     return <Redirect to="/" />;
@@ -26,6 +30,10 @@ function App() {
       >
         <Header />
 
+        {/**
+         * This is the main component switcher of the application.
+         * It's based on the current entered URL
+         */}
         <RootContainer>
           <Switch>
             {routes.map(({ component, path }) => (

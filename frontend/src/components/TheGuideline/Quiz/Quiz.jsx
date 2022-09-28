@@ -1,6 +1,10 @@
 import React from "react";
 import { GuidelineSubPageRoot } from "../../generic.styles";
 
+/**
+ * Component visible upon clicking the quiz button or entering the URL
+ * @returns the quiz page from the guideline
+ */
 export const Quiz = () => {
   return (
     <GuidelineSubPageRoot>

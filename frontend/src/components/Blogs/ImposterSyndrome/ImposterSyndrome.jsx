@@ -1,6 +1,10 @@
 import React from "react";
 import { GuidelineSubPageRoot } from "../../generic.styles";
 
+/**
+ * Component visible upon clicking the ImposterSyndrome button or entering the URL
+ * @returns the ImposterSyndrome page from the blogs
+ */
 export const ImposterSyndrome = () => {
   return (
     <GuidelineSubPageRoot>

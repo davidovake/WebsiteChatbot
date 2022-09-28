@@ -1,6 +1,10 @@
 import React from "react";
 import { GuidelineSubPageRoot } from "../generic.styles";
 
+/**
+ * Component visible upon clicking the contacts button or entering the URL
+ * @returns the Contacts page of the app
+ */
 export const Contacts = () => {
   return (
     <GuidelineSubPageRoot>

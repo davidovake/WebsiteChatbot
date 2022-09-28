@@ -1,6 +1,12 @@
 const { NlpManager } = require("node-nlp");
+const { Socket } = require("socket.io");
 const manager = new NlpManager({ languages: ["en"] });
 // 1 - Train the IA
+
+/**
+ * Method responsbile for training the chatbot
+ * @returns the trained chatbot
+ */
 async function trainChatBotIA() {
   return new Promise(async (resolve, reject) => {
     // Adds the utterances and intents for the NLP
@@ -44,9 +50,6 @@ async function trainChatBotIA() {
       "greetings.hello",
       "What do you want to learn today? Pick from the following options: \n1.Frontend\n2.Backend\n3.Full stack"
     );
-
-    // manager.addAnswer("en", "greetings.hello", "Hey there!");
-    // manager.addAnswer("en", "greetings.hello", "Greetings!");
     manager.addAnswer("en", "greetings.myname", "Your name is Hristiana!");
     manager.addAnswer(
       "en",
@@ -59,6 +62,12 @@ async function trainChatBotIA() {
     resolve(true);
   });
 }
+
+/**
+ * Method responsbile for generating the chatbot response
+ * @param {string} qsm
+ * @returns generated response by the chatbot
+ */
 async function generateResponseAI(qsm) {
   // Train and save the mode
   return new Promise(async (resolve, reject) => {
@@ -66,12 +75,27 @@ async function generateResponseAI(qsm) {
     resolve(response);
   });
 }
+
+/**
+ * Method responsible for creating the websocket handshake with the frontend
+ * @param {Socket} io
+ */
 const connectWebSocket = (io) => {
+  /**
+   * Event triggered on the connection with the frontend
+   */
   io.on("connection", function (socket) {
+    /**
+     * Event triggered on the join of a new user
+     */
     socket.on("join", (userId) => {
       socket.join(userId);
       console.log("New user joined!");
     });
+
+    /**
+     * Event triggered on receiving a new message from the frontend
+     */
     socket.on("new-msg", async function (data) {
       let response = await generateResponseAI(data.msg);
       console.log("Response", response);

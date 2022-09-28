@@ -3,6 +3,10 @@ import BackendImage from "../../../images/BackendImage.png";
 import { GuidelineSubPageRoot } from "../../generic.styles";
 import { InnerRoot, RightGap, Root } from "./Backend.styles";
 
+/**
+ * Component visible upon clicking the backend button or entering the URL
+ * @returns the backend page from the guideline
+ */
 export const Backend = () => {
   return (
     <Root>

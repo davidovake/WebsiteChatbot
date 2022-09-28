@@ -23,14 +23,16 @@ export const mainText =
   "there were many options available. It is very common for girls to suffer from the imposer syndrome and " +
   "so did I and through STEMio I am hoping to raise awareness and to show support to all the girls out there questioning if they are good enough for the industry.";
 
+/**
+ * Component visible upon clicking the about button or entering the URL
+ * @returns the AboutSTEMio page of the app
+ */
 export const AboutSTEMio = () => {
   return (
     <Root>
       <RootFlexbox>
         <WelcomePageText>{mainText}</WelcomePageText>
         <WelcomePageImage widthSize={50} imageUrl={aboutSTEMioPicture} />
-        {/* <MainContainer> */}
-        {/* </MainContainer> */}
       </RootFlexbox>
     </Root>
   );

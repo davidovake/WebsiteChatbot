@@ -3,6 +3,10 @@ import FrontendImage from "../../../images/FrontendImage.png";
 import { GuidelineSubPageRoot } from "../../generic.styles";
 import { InnerRoot, RightGap, Root } from "../Frontend/Frontend.styles";
 
+/**
+ * Component visible upon clicking the frontend button or entering the URL
+ * @returns the frontend page from the guideline
+ */
 export const Frontend = () => {
   return (
     <Root>

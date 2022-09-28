@@ -44,7 +44,6 @@ export const WelcomePageImage = styled.div(
     background-repeat: no-repeat;
     background-position: center center;
     background-size: ${widthSize}% 100%;
-    /* aspect-ratio: 1 / 1; */
     cursor: pointer;
   `
 );
@@ -54,6 +53,5 @@ export const WelcomePageText = styled.div(
     flex: 1 1 0px;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* white-space: nowrap; */
   `
 );

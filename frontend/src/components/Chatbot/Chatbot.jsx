@@ -5,13 +5,24 @@ import { useHistory } from "react-router-dom";
 import io from "socket.io-client";
 import { Root } from "./Chatbot.styles";
 
+/**
+ * This is the variable that stores the current URL used within the application context
+ */
 const URL =
   !process.env.NODE_ENV || process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
     : "https://stemio-guidleine.herokuapp.com";
 
+/**
+ * The frontend side of the socket that connects to the backend
+ */
 const socket = io(URL);
 
+/**
+ *
+ * @param {string} email
+ * @returns if the entered string qualifies as an email
+ */
 const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
@@ -20,9 +31,19 @@ const validateEmail = (email) => {
     );
 };
 
+/**
+ * This is the component responsbile for creating the chatbot visual interface between the client and the server
+ * @returns The react-chat-window Chatbot Launcher
+ */
 export const Chatbot = () => {
+  /**
+   * useHistory is the hook responsbile for navigation
+   */
   const history = useHistory();
 
+  /**
+   * useState is the hook used to manipulate the chatbot messageList
+   */
   const [messageList, setMessageList] = useState([
     {
       author: "them",
@@ -31,9 +52,11 @@ export const Chatbot = () => {
     },
   ]);
 
+  /**
+   * This method accepts an email as a string and sends a post request to the backend
+   * @param {string} email
+   */
   const sendEmail = async (email) => {
-    console.log("Gets in the email sender: ", email);
-
     await axios({
       method: "POST",
       url: `${URL}/api/newsletter`,
@@ -44,8 +67,15 @@ export const Chatbot = () => {
     });
   };
 
+  /**
+   * This is the method used to send messages to the chatbot through the websocket
+   * It utilises the useCallback hook to optimize the run of the function
+   */
   const onMessageWasSent = useCallback(
     async (message) => {
+      /**
+       * Method used to add the current inputted message into the messageList array
+       */
       await setMessageList((messageList) => [
         ...messageList,
         message,
@@ -56,6 +86,9 @@ export const Chatbot = () => {
         },
       ]);
 
+      /**
+       * Method responsible for sending data through the socket from the frontend side
+       */
       socket.emit("new-msg", {
         msg: message.data.text,
         room: "user1",
@@ -74,16 +107,22 @@ export const Chatbot = () => {
     [history]
   );
 
+  /**
+   * This is the hook responsbile for listening for the websocket events received from the backend
+   */
   useEffect(() => {
-    // setup();
+    /**
+     * This is the event triggered when the frontend connects with the backend through the websocket
+     */
     socket.on("connect", () => {
       console.log("connected");
       socket.emit("join", "user1");
     });
 
+    /**
+     * Event triggered when the backend is sending a reply back to the frontend
+     */
     socket.on("send-msg-response", async (msg) => {
-      console.log("Test: ", msg);
-
       setMessageList((messageList) => {
         messageList.pop();
 
@@ -98,6 +137,9 @@ export const Chatbot = () => {
       });
     });
 
+    /**
+     * This return block is responsbile for clearing the event listeners
+     */
     return () => {
       socket.off("connect");
       socket.off("join");

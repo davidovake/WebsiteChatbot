@@ -6,10 +6,6 @@ import {
   WelcomeRoot,
 } from "./Welcome.styles";
 
-// function Welcome() {
-
-// }
-
 const MainText =
   "Hello future programmer!" +
   "My name is STEMio and I am here to guide you through your journey of becoming a tech star." +
@@ -18,6 +14,10 @@ const MainText =
   "STEMio’s mission is to provide friendly and supportive guideline to anyone who wants to get into technology." +
   "You are probably wondering how STEMio is different from the other platforms –  click on the Guideline button to find out! ";
 
+/**
+ * This is the main component displayed when the user enters the website
+ * @returns the welcome page
+ */
 export const Welcome = () => {
   return (
     <WelcomeRoot>
