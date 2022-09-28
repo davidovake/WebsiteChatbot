@@ -16,7 +16,7 @@ export const FullStack = () => {
       <GuidelineSubPageRoot>
         <h1>What is a Full Stack Developer?</h1>
         <p>
-          Full-stack technology refers to the entire depth of a computer system
+          "Full-stack technology refers to the entire depth of a computer system
           application, and full stack web developers are those who are capable
           of developing both the front end and the{" "}
           <a href="https://www.simplilearn.com/tutorials/programming-tutorial/what-is-backend-development">
@@ -187,7 +187,7 @@ export const FullStack = () => {
             <a href="https://www.simplilearn.com/skills-required-to-become-a-full-stack-developer-article">
               https://www.simplilearn.com/skills-required-to-become-a-full-stack-developer-article
             </a>
-            )
+            )"
           </li>
         </ul>
       </GuidelineSubPageRoot>

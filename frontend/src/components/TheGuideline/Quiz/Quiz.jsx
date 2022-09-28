@@ -10,9 +10,9 @@ export const Quiz = () => {
     <GuidelineSubPageRoot>
       <h2>Find out which technical career path suits you the most</h2>
       <p>
-        There are many interesting technical career pathways that you can follow
-        that does not involve heavy coding. Find out which technical career path
-        might be suitable for you by completing these short tests :
+        "There are many interesting technical career pathways that you can
+        follow that does not involve heavy coding. Find out which technical
+        career path might be suitable for you by completing these short tests :
       </p>
       <p>
         <a href="https://www.techskills.org/careers/quiz/">
@@ -28,6 +28,7 @@ export const Quiz = () => {
         <a href="https://skillcrush.com/blog/is-a-tech-career-right-for-you/">
           https://skillcrush.com/blog/is-a-tech-career-right-for-you/
         </a>
+        "
       </p>
     </GuidelineSubPageRoot>
   );

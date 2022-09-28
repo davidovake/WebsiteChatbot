@@ -16,15 +16,15 @@ export const Backend = () => {
       <GuidelineSubPageRoot>
         <h1>What is Back End?</h1>
         <p>
-          While front-end development is about making sites and web applications
-          render on the client-side, back-end development is all about making
-          these apps render server-side. But it's a bit more involved than that.
-          While the previous statement holds true, back-end developers also
-          create services that process business logic and access other resources
-          such as databases, file servers, cloud services and more. These
-          services are the backbone of any application and can be accessed and
-          used not only by server-side rendering apps but also from client-side
-          rendering apps. (
+          "While front-end development is about making sites and web
+          applications render on the client-side, back-end development is all
+          about making these apps render server-side. But it's a bit more
+          involved than that. While the previous statement holds true, back-end
+          developers also create services that process business logic and access
+          other resources such as databases, file servers, cloud services and
+          more. These services are the backbone of any application and can be
+          accessed and used not only by server-side rendering apps but also from
+          client-side rendering apps. (
           <a href="https://www.pluralsight.com/blog/software-development/front-end-vs-back-end">
             https://www.pluralsight.com/blog/software-development/front-end-vs-back-end
           </a>
@@ -143,7 +143,7 @@ export const Backend = () => {
           <a href="https://hackr.io/blog/how-to-become-a-backend-developer">
             https://hackr.io/blog/how-to-become-a-backend-developer
           </a>
-          )
+          )"
         </p>
       </GuidelineSubPageRoot>
       <RightGap />

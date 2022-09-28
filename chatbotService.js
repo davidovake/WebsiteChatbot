@@ -1,3 +1,6 @@
+/**
+ * This chatbot implementation was inspired from https://medium.com/voice-tech-podcast/build-a-chatbot-powered-ai-with-node-react-and-socketio-eaf6bfee43d2
+ */
 const { NlpManager } = require("node-nlp");
 const { Socket } = require("socket.io");
 const manager = new NlpManager({ languages: ["en"] });
@@ -54,7 +57,7 @@ async function trainChatBotIA() {
     manager.addAnswer(
       "en",
       "greetings.options",
-      "You are being sent to the requested page"
+      "You are being sent to the requested page. Would you like to subscribe to the newsletter?"
     );
     await manager.train();
     manager.save();

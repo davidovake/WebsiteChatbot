@@ -1,3 +1,6 @@
+/**
+ * This chatbot implementation was inspired from https://medium.com/voice-tech-podcast/build-a-chatbot-powered-ai-with-node-react-and-socketio-eaf6bfee43d2
+ */
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { Launcher } from "react-chat-window";

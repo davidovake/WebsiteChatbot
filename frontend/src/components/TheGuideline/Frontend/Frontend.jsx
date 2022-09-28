@@ -16,7 +16,7 @@ export const Frontend = () => {
       <GuidelineSubPageRoot>
         <h1>What is Front End?</h1>
         <p>
-          Front-end web development, also known as client-side development is
+          "Front-end web development, also known as client-side development is
           the practice of producing HTML, CSS and JavaScript for a website or
           Web Application so that a user can see and interact with them
           directly. The challenge associated with front end development is that
@@ -208,7 +208,7 @@ export const Frontend = () => {
           the discussions and even find a snipped of the code you are looking
           for. (
           <a href="https://stackoverflow.com/">https://stackoverflow.com/</a>)
-          Looking for an answer on StackFlow – you are already a developer.
+          Looking for an answer on StackFlow – you are already a developer."
         </p>
       </GuidelineSubPageRoot>
       <RightGap />

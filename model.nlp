@@ -790,7 +790,7 @@
         ],
         "greetings.options": [
           {
-            "answer": "You are being sent to the requested page"
+            "answer": "You are being sent to the requested page. Would you like to subscribe to the newsletter?"
           }
         ]
       }
