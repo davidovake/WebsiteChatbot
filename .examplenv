@@ -1,0 +1,5 @@
+EMAIL="testemail"
+PASS="testpass"
+OAUTH_CLIENTID="clientId"
+OAUTH_CLIENT_SECRET="clientSecret"
+OAUTH_REFRESH_TOKEN="refreshToken"
