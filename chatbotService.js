@@ -29,8 +29,13 @@ async function trainChatBotIA() {
     manager.addDocument("en", "3", "greetings.options");
     manager.addDocument(
       "en",
-      "I want to subscribe to the newsletter",
+      "Yes, I want to subscribe to the newsletter",
       "greetings.subscribe"
+    );
+    manager.addDocument(
+      "en",
+      "No, I don't want to subscribe to the newsletter",
+      "greetings.nosubscribe"
     );
     manager.addDocument("en", "My mail is %email%", "email");
     manager.addDocument("en", "My email is %email%", "email");
@@ -46,6 +51,7 @@ async function trainChatBotIA() {
       "greetings.subscribe",
       "Enter your email address please"
     );
+    manager.addAnswer("en", "greetings.nosubscribe", "Ok, bye then!");
     manager.addAnswer("en", "greetings.bye", "Till next time");
     manager.addAnswer("en", "greetings.bye", "see you soon!");
     manager.addAnswer(
@@ -59,6 +65,7 @@ async function trainChatBotIA() {
       "greetings.options",
       "You are being sent to the requested page. Would you like to subscribe to the newsletter?"
     );
+
     await manager.train();
     manager.save();
     console.log("AI has been trainded");
